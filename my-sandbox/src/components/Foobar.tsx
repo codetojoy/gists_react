@@ -1,20 +1,8 @@
-// import { useDispatch, useSelector } from "react-redux";
 import React from "react";
-// import { IRootState } from "../store";
-// import { IConfigState } from "../store/config/types";
 import { useAppSelector, useAppDispatch } from "../hooks";
 import { setNumRows, setNumCols } from "../store/config/actions";
 
 const Foobar: React.FC<{}> = (props) => {
-  /*
-  const config: IConfigState = useSelector((state: IRootState) => {
-    console.log(`TRACER Foobar:`);
-    console.table(state);
-    console.log(`TRACER Foobar numRows: ${state.config.numRows}`);
-    return state.config;
-  });
-  const dispatch = useDispatch();
-  */
   const config = useAppSelector((state) => state.config);
   const dispatch = useAppDispatch();
   const rowClickHandler = () => {
@@ -27,7 +15,7 @@ const Foobar: React.FC<{}> = (props) => {
   };
   return (
     <div>
-      <p>TRACER v3 hello from foobar</p>
+      <p>TRACER Foobar</p>
       <p>TRACER # rows: {config.numRows}</p>
       <p>TRACER # cols: {config.numCols}</p>
       <button onClick={rowClickHandler}>bump row value</button>
